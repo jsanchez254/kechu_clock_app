@@ -11,21 +11,43 @@ class navbar extends Component {
     render() { 
         return (
             <nav className = "navbar is-success">
-                <div className = "navbar-start">
+                <div className = "navbar-end">
 
-                    <div className = "navbar-item" size = "2x" >
-                    <FontAwesomeIcon icon = "image" size = "2x"/><span id = "underline">THEME</span>
+                    <div className = "navbar-item has-dropdown is-hoverable" size = "2x" >
+                        <div className = "navbar-link">
+                            <FontAwesomeIcon icon = "image" size = "2x"/><span id = "underline">THEME</span>
+                        </div>
+
+                        <div className = "navbar-dropdown">
+                            <a className = "navbar-item">
+                                <h1 className = "is-size-6">ZELDA</h1>
+                            </a>
+                            <a className = "navbar-item">
+                                <h1 className = "is-size-6">NATURE</h1>
+                            </a>
+                        </div>
                     </div>
                 
-                    <div className = "navbar-item">
-                    <FontAwesomeIcon icon = "globe-americas" size = "2x"/><span id = "underline"> ZONE</span>
+                    <div className = "navbar-item has-dropdown is-hoverable">
+                        <div className = "navbar-link">
+                            <FontAwesomeIcon icon = "globe-americas" size = "2x"/><span id = "underline"> ZONE</span>
+                        </div>
+
+                        <div className = "navbar-dropdown">
+                            <a className = "navbar-item">
+                                <h1 className = "is-size-6">PACIFIC TIME</h1>
+                            </a>
+                            <a className = "navbar-item">
+                                <h1 className = "is-size-6">CENTRAL TIME</h1>
+                            </a>
+                        </div>
                     </div>
 
                     <div className = "navbar-item">
                     <FontAwesomeIcon icon = "stopwatch" size = "2x" /><span id = "underline">TIMER</span>
                     </div>
 
-                    <div className = "navbar-item">
+                    <div className = "navbar-item" onClick = {this.props.onAlarm}>
                     <FontAwesomeIcon icon = "clock" size = "2x"/><span id = "underline">ALARM</span>
                     </div>
                 </div>

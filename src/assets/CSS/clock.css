@@ -1,7 +1,27 @@
 #clock{
     font-size: 250px;
-    color: rgb(136, 211, 205);
+    color: white;
+    text-align: center;
+    display: block;
+}
+
+#displayAlarm{
+    display: none;
     text-align: center;
 }
+
+#alarm{
+    font-size: 150px;
+    color: white;
+}
+
+.cursorAlarm{
+    cursor:pointer;
+}
+
+.cursorAlarm:hover{
+    color: green;
+}
+
 
 

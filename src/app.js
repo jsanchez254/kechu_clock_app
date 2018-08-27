@@ -2,11 +2,14 @@ import React, { Component } from 'react';
 
 //IMPORT JAVASCRIPT
 import {changeBackground} from "./assets/JS/background.js";
+import {alarma} from "./assets/JS/alarm.js";
+import {backTime} from "./assets/JS/alarm.js";
 
 //COMPONENTS IMPORTS
-import Navbar from "./components/navbar"
-import Themes from "./components/themes"
-import Time from "./components/time"
+import Navbar from "./components/navbar";
+import Themes from "./components/themes";
+import Time from "./components/time";
+import Alarm from "./components/alarm";
 
 //CSS IMPORTS
 import 'bulma/css/bulma.css';
@@ -29,7 +32,8 @@ class App extends Component {
             {id: 2, img: nature},
             {id: 3, img: salamance},
             {id: 4, img: zelda}
-        ]
+        ],
+        number: 5
       };
     
     //WILL CHANGE THEME 
@@ -53,6 +57,15 @@ class App extends Component {
        changeBackground(img);
     }
 
+    //WILL HANDLE ALARM STILL WORKING ON IT ;-;
+    handleAlarm = () =>{
+        alarma();
+    }
+
+    handleBackToTime = () =>{
+        backTime();
+    }
+
     styles  = {
      backgroundImage: "url(" + majoras + ")"
     };
@@ -60,11 +73,16 @@ class App extends Component {
     render() { 
         return ( 
             <React.Fragment>
-                <Navbar></Navbar>
+                <Navbar onAlarm = {this.handleAlarm}></Navbar>
                 <section style={this.styles} className = "section is-medium is-flexible" id = "caca">
                     <div className = "columns">
                         <div className = "column is-10">
-                            <Time></Time>
+                            <div id = "displayTime">
+                                <Time></Time>
+                            </div>
+                            <div id = "displayAlarm">
+                                <Alarm onBack = {this.handleBackToTime}></Alarm>
+                            </div>
                         </div>
                         <div className = "column is-2">
                             <centered><Themes onTheme = {this.handleTheme} background = {this.state.backgrounds}></Themes></centered>
