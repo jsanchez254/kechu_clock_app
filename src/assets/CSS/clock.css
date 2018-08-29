@@ -5,13 +5,15 @@
     display: block;
 }
 
+/*ALARM*/
+
 #displayAlarm{
     display: none;
     text-align: center;
 }
 
 #alarm{
-    font-size: 150px;
+    font-size: 220px;
     color: white;
 }
 

@@ -33,7 +33,8 @@ class App extends Component {
             {id: 3, img: salamance},
             {id: 4, img: zelda}
         ],
-        number: 5
+        hour: 0,
+        minute: 0
       };
     
     //WILL CHANGE THEME 
@@ -62,8 +63,32 @@ class App extends Component {
         alarma();
     }
 
+    //HANDLES BACK TO CLOCK FROM ALARM
     handleBackToTime = () =>{
         backTime();
+    }
+
+    //HANDLE INCREASE OF ALARM BUTTONS -- HOUR
+    handleIncreaseHour =() =>{
+        if(this.state.hour < 12){
+            this.state.hour++;
+        }
+        this.setState({hour: this.state.hour});
+    }
+
+    //HANDLE INCREASE OF ALARM BUTTONS -- MINUTE
+    handleIncreaseMin =() =>{
+        if(this.state.minute < 59){
+            this.state.minute++;
+        }
+        this.setState({minute: this.state.minute});
+    }
+
+    handleDecreaseHour =()=>{
+        if(this.state.hour > 0){
+            this.state.hour--;
+        }
+        this.setState({hour: this.state.hour});
     }
 
     styles  = {
@@ -81,7 +106,8 @@ class App extends Component {
                                 <Time></Time>
                             </div>
                             <div id = "displayAlarm">
-                                <Alarm onBack = {this.handleBackToTime}></Alarm>
+                                <Alarm onIncreaseMin = {this.handleIncreaseMin} onIncreaseHrs = {this.handleIncreaseHour} min = {this.state.minute} 
+                                onDecreaseHrs = {this.handleDecreaseHour}    hour = {this.state.hour} onBack = {this.handleBackToTime}></Alarm>
                             </div>
                         </div>
                         <div className = "column is-2">
