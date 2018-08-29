@@ -34,7 +34,8 @@ class App extends Component {
             {id: 4, img: zelda}
         ],
         hour: 0,
-        minute: 0
+        minute: 0,
+        time: "AM"
       };
     
     //WILL CHANGE THEME 
@@ -84,11 +85,31 @@ class App extends Component {
         this.setState({minute: this.state.minute});
     }
 
+    //HANDLE DECREASE HOUR
     handleDecreaseHour =()=>{
         if(this.state.hour > 0){
             this.state.hour--;
         }
         this.setState({hour: this.state.hour});
+    }
+
+    //HANDLE DECREASE MINUTE
+    handleDecreaseMin =()=>{
+        if(this.state.minute > 0){
+            this.state.minute--;
+        }
+        this.setState({minute: this.state.minute});
+    }
+
+    //HANDLE TIME
+    handleTime = () =>{
+        if(this.state.time === "AM"){
+            this.state.time = "PM";
+        }
+        else{
+            this.state.time = "AM";
+        }
+        this.setState({time: this.state.time});
     }
 
     styles  = {
@@ -107,7 +128,8 @@ class App extends Component {
                             </div>
                             <div id = "displayAlarm">
                                 <Alarm onIncreaseMin = {this.handleIncreaseMin} onIncreaseHrs = {this.handleIncreaseHour} min = {this.state.minute} 
-                                onDecreaseHrs = {this.handleDecreaseHour}    hour = {this.state.hour} onBack = {this.handleBackToTime}></Alarm>
+                                onDecreaseHrs = {this.handleDecreaseHour} onDecreaseMin = {this.handleDecreaseMin}  
+                                 onTime = {this.handleTime} hour = {this.state.hour} onBack = {this.handleBackToTime} tiempo = {this.state.time}></Alarm>
                             </div>
                         </div>
                         <div className = "column is-2">

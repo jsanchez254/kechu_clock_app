@@ -28,7 +28,7 @@ class alarm extends Component {
                         </div>
     
                         <div className = "column is-3">
-                        <span className = "cursorAlarm">
+                        <span onClick = {this.props.onTime} className = "cursorAlarm">
                             <FontAwesomeIcon icon = "arrow-alt-circle-up" size = "5x" color = "white"/>
                         </span>
                         </div>
@@ -40,7 +40,7 @@ class alarm extends Component {
                         </div>
                         <div className = "column is-3" id = "alarm">{this.props.hour}:</div>
                         <div className = "column is-3" id = "alarm">{this.props.min}:</div>
-                        <div className = "column is-3" id = "alarm">AM</div>
+                        <div className = "column is-3" id = "alarm">{this.props.tiempo}</div>
                         <div className = "column is-1">
                             <button className = "button is-success is-large">ENTER</button>
                         </div>
@@ -56,14 +56,14 @@ class alarm extends Component {
                         </div>
 
                         <div className = "column is-3 ">
-                            <span className = "cursorAlarm">
-                                <FontAwesomeIcon icon = "arrow-alt-circle-down" size = "5x" color = "white"/>
+                            <span onClick = {this.props.onDecreaseMin} className = "cursorAlarm">
+                                <FontAwesomeIcon  icon = "arrow-alt-circle-down" size = "5x" color = "white"/>
                             </span>
                         </div>
 
                         <div className = "column is-3">
-                            <span className = "cursorAlarm">
-                                <FontAwesomeIcon icon = "arrow-alt-circle-down" size = "5x" color = "white"/>
+                            <span onClick = {this.props.onTime} className = "cursorAlarm">
+                                <FontAwesomeIcon  icon = "arrow-alt-circle-down" size = "5x" color = "white"/>
                             </span>
                         </div>
                     </div>
