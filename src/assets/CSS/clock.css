@@ -25,5 +25,25 @@
     color: green;
 }
 
+/*TIMER*/
+#displayTimer{
+    color: white;
+    display: none;
+    text-align: center;
+}
 
+#timer{
+    font-size: 220px;
+    color: white;
+}
 
+/*DISPLAY OUTPUT TIMER*/
+#displayOutputTimer{
+    font-size: 260px;
+    color: yellow;
+    display: none;
+}
+
+#displayInputTimer{
+    display: block;
+}

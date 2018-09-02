@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react';	
 
-    time = setInterval(getTime, 1000);	
-    time = setInterval(getTime, 1000);
-    function getTime(){
+setInterval(getTime, 1000);
+export function getTime(){
+		var alarm;
 		var time = new Date();
 		var hour = time.getHours();
 		var sec =  time.getSeconds();
@@ -22,12 +22,12 @@ import React, { Component } from 'react';
 		}
 		if(sec < 10){
 			sec = "0" + sec;
-        }
-		document.getElementById("clock").innerHTML = hour + ":" + min + ":" + sec + zone;
+		}
+		var time = document.getElementById("clock"); 
+		time.innerHTML = hour + ":" + min + ":" + sec + zone;
 	}
 	
 class time extends Component {
-    state = {  }
     render() { 
         return (
             <div id = "clock"></div>
